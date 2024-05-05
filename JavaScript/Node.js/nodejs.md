@@ -1,10 +1,3 @@
----
-title: JavaScript와 Node.js
-date: 2024-04-29 00:50:00 +09:00
-categories: [Studying, Back-end, Node.js]
-tags: 
-  [backend, javascript, js, nodejs]
----
 
 JavaScript
 ======================================================
