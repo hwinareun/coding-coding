@@ -22,6 +22,7 @@
 
 ## PK(Primary Key, 기본키)
 : 해당 테이블의 각 row(행, 가로)을 유니크(유일)하게 구별할 수 있는 key값.
+> 중복된 데이터가 입력되지 않도록 제한하여 특정 데이터를 구분할 수 있음.
 
 ## FK(Foreign Key, 외래키)
 : A 테이블에서 B 테이블의 데이터를 찾아가고 싶을 때, 사용하는 key값.
@@ -36,6 +37,8 @@
 
 - 테이블을 분리(정규화)하고, 중복을 없애줌으로써 효율성을 가져옴.
 - 각 테이블간의 연관관계가 생김.
+  >(1:N) 한쪽 테이블에는 하나의 값만, 다른 쪽 테이블에는 여러 개의 값이 존재할 수 있는 관계. <br>
+  => 기본키(PK) : 외래키(FK) 관계라고 부르기도 함.
 
 ---
 <br><br>
@@ -55,7 +58,12 @@
 - TIMESTAMP<br>
   : 날짜 + 시간. YYYY-MM-DD HH:MM:SS(24시간제)<br>
   : 시스템 시간대 정보에 맞게 일시를 저장.<br>
-  (cf. UTC(국제표준시): 한국 시간 -9)
+
+> 해당 서버의 시간대를 반영하기 때문에<br>
+DB에 저장될 때는 UTC(국제표준시: 한국 시간 -9) 시간대로 변환되어 저장됨.
+
+> DATETIME vs TIMESTAMP
+<br> TIMESTAMP 타입의 값은 현재 시각 <--> UTC 시각으로 변환되며 DATETIME은 변환되지 않음. 만약 글로벌 서비스에서 DATETIME을 사용하여 날짜를 표현할 경우, 한국에서 17:00시에 작성된 글이 미국에서도 그대로 17:00시에 저장된 것처럼 보일 수 있음. 
 
 ## Not Null vs Default
 - Not Null<br>
@@ -147,6 +155,13 @@
 
 ## 실습: users 테이블 생성
 ![image](https://github.com/hwinareun/hwi-coding/assets/165121326/2d80bf66-273b-46f2-90fe-c4949f4ee31f)
+> 데이터 형식
+<br> (정수형) TINYINT, SMALLINT, INT, BIGINT
+<br> (실수형) FLOAT, DOUBLE
+<br> (문자형) CHAR(고정형), VARCHAR(가변형)
+<br> (대량의 데이터) TEXT, LONGTEXT, BLOG, LONGBLOB
+<br> (날짜형) DATE, TIME, DATETIME, TIMESTAMP
+
 ---
 <br><br>
 
@@ -174,9 +189,17 @@ connection.query(
   }
 );
 ```
+
+> 쿼리(query)?<br>
+: DB에 사용자가 요정한 특정 데이터를 보여달라는 요청.<br>
+: '쿼리문(질의문)을 작성한다' == DB에서 원하는 정보를 가져오는 코드를 작성한다
+
+> query("요청할 SQL 쿼리문", 콜백 함수)<br>
+: DB에 데이터 요청을 하는 함수.
+
 ---
 
-### Table에 Column 추가
+### Table에 Column(열) 추가
 ![image](https://github.com/hwinareun/hwi-coding/assets/165121326/0524b6bc-bf20-4fe5-88dc-0ab4ee53e908)
 
 ---
@@ -194,11 +217,13 @@ SET time_zone = 'Asia/Seoul'
 const connection = mysql.createConnection({
   ...
   dateStrings: true,
-  // dateStrings: true
-  // DB로부터 Date 타입의 데이터를 String으로 변환하여 가져옴.
-  // 이 때, 시스템의 Local TimeZone이 반영됨.
 });
 ```
+> dateStrings: true<br>
+  DB로부터 Date 타입의 데이터를 String으로 변환하여 가져옴.<br>
+  이 때, 시스템의 Local TimeZone이 반영됨.<br>
+  따로 설정하지 않으면 false가 기본값으로, UTC 기준 시간대를 가져옴.
+
 ![image](https://github.com/hwinareun/hwi-coding/assets/165121326/f84e8880-d6dc-4b80-a6df-d2b66323e2ee)
 
 ---
