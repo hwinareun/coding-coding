@@ -7,16 +7,8 @@
  ┃ ┃ ┗ 📜[nodejs.md](https://github.com/hwinareun/coding-coding/blob/main/JavaScript/Node.js/nodejs.md)<br>
  ┃ ┣ 📜[dataType.md](https://github.com/hwinareun/coding-coding/blob/main/JavaScript/dataType.md)<br>
  ┃ ┗ 📜[if.md](https://github.com/hwinareun/coding-coding/blob/main/JavaScript/if.md)<br>
- ┣ 📂[dev](https://github.com/hwinareun/coding-coding/tree/main/dev)
- ┣ 📂WIL
- ┃ ┣ 📜[1week.md](https://github.com/hwinareun/coding-coding/blob/main/dev/1week.md)<br>
- ┃ ┣ 📜[2week.md](https://github.com/hwinareun/coding-coding/blob/main/dev/2week.md)<br>
- ┃ ┣ 📜[3week.md](https://github.com/hwinareun/coding-coding/blob/main/dev/3week.md)<br>
- ┃ ┣ 📜[4week.md](https://github.com/hwinareun/coding-coding/blob/main/dev/4week.md)<br>
- ┃ ┗ 📜[5week.md](https://github.com/hwinareun/coding-coding/blob/main/dev/5week.md)<br>
- ┃ ┗ 📜6week.md<br>
- ┗ 📂assignment<br>
- ┃ ┗ 📜users_jwt_cookie.js<br>
- 
+ ┃ ┣ 📂[dev](https://github.com/hwinareun/coding-coding/tree/main/dev)<br>
+ ┃ ┃ ┣ 📂[WIL](https://github.com/hwinareun/hwi-coding/tree/main/dev/WIL)<br>
+ ┃ ┃ ┗ 📂[assignment](https://github.com/hwinareun/hwi-coding/tree/main/dev/assignment)<br>
  ┣ 📜[README.md](https://github.com/hwinareun/coding-coding/blob/main/README.md)<br>
  ┗ 📜[frontend.md](https://github.com/hwinareun/coding-coding/blob/main/frontend.md)<br>
